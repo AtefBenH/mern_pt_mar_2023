@@ -12,16 +12,19 @@ const FunctionalComponent = (props)=>{
     // console.log("***** Props from My Parent App.js",props,"*****");
     const y = 22
     const incrementX = () =>{
-        // console.log('button Clicked !!!', x);
-        setX(x+1)
-        // console.log('X Changed!!!', x);
+        console.log('button Clicked !!!', x);
+        setX(x+1)// - 
+        console.log('X Changed!!!', x);
     }
+
     return (
         <fieldset>
             <legend>🎈🎈 FunctionalComponent.jsx 🎈🎈</legend>
             <h2>PROPS : {JSON.stringify(props)}</h2>
-            <h2> X from my Parent App.js (PROPS) = {props.x}</h2>
-            <h2> X from my State  = {x}</h2>
+            <h3> X from my Parent App.js (PROPS) = {props.x}</h3>
+            <h3>John From PROPS : {JSON.stringify(props.john)}</h3>
+            <hr />
+            <h4> X from my State  = {x}</h4>
             <h3>John's Info : {JSON.stringify(props.john)}</h3>
             <button onClick={()=>{incrementX()}}>Click Me 🧨</button>
             <br />
