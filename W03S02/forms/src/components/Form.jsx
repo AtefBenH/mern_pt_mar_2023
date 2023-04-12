@@ -11,6 +11,7 @@ const Form = () => {
     const [favFood,setFavFood] = useState("")
     const createUser = (e)=>{
         e.preventDefault();
+        console.log();
     }
     const handleUserName = (e)=>{
         console.log(e.target.value);
@@ -24,21 +25,21 @@ const Form = () => {
   return (
     <fieldset>
         <legend>Form</legend>
-        <p>
-            UserName = {JSON.stringify(username)} <br />
-            Age = {JSON.stringify(age)} <br />
-            favFood = {JSON.stringify(favFood)} <br />
-        </p>
-        <hr />
         <form onSubmit={createUser}>
             {/* <p>Username : <input onChange={(e)=>setUsername(e.target.value)}/></p>  */}
             {usernameError?<p style={{color:"red"}}>Username must be more than 3 </p>:""}
             <p>Username : <input onChange={(e)=>handleUserName(e)}/></p> 
             <p>Age : <input type="number" onChange={(e)=>setAge(e.target.value)} /></p>
             <p>Favorite Food : <input onChange={(e)=>setFavFood(e.target.value)} /></p>
-            <button>Create</button>
+            {/* <button>Create</button> */}
         </form>
         {/* <Display/> */}
+        <hr />
+        <p>
+            UserName = {JSON.stringify(username)} <br />
+            Age = {JSON.stringify(age)} <br />
+            favFood = {JSON.stringify(favFood)} <br />
+        </p>
     </fieldset>
   )
 }
